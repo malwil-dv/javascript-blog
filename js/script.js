@@ -36,7 +36,7 @@
     /* add class 'active' to the correct article */
 
     selectedArticle.classList.add('active'); 
-  }
+  };
 
   const optArticleSelector = '.post';
   const optTitleSelector = '.post-title';
