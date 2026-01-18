@@ -1,39 +1,21 @@
-import js from "@eslint/js";
-
-export default [
-  // odpowiednik "extends": "eslint:recommended"
-  js.configs.recommended,
-
-  {
-    files: ["js/**/*.js"],
-
-    languageOptions: {
-      ecmaVersion: 2015,
-
-      globals: {
-        // env: browser
-        window: "readonly",
-        document: "readonly",
-        console: "readonly"
-      }
-    },
-
-    rules: {
-      indent: ["error", 2],
-
-      "linebreak-style": "off",
-
-      quotes: [
-        "error",
-        "single",
-        { allowTemplateLiterals: true }
-      ],
-
-      semi: ["error", "always"],
-
-      "no-console": "off",
-
-      "no-prototype-builtins": "off"
-    }
+export default {
+  extends: ["stylelint-config-standard-scss"],
+  rules: {
+    "block-no-empty": true,
+    "color-no-invalid-hex": true,
+    "comment-empty-line-before": null,
+    "declaration-colon-space-after-single-line": "always",
+    "declaration-colon-newline-after-multi-line": "always",
+    "declaration-block-semicolon-newline-after": "always",
+    "declaration-block-trailing-semicolon": "always",
+    "indentation": 2,
+    "max-empty-lines": 2,
+    "max-nesting-depth": [3, { "ignore": ["pseudo-classes"] }],
+    "rule-empty-line-before": ["always", { "except": ["first-nested"], "ignore": ["after-comment"] }],
+    "unit-allowed-list": null,
+    "no-descending-specificity": null,
+    "scss/selector-no-redundant-nesting-selector": true,
+    "scss/no-duplicate-dollar-variables": true,
+    "scss/no-global-function-names": null
   }
-];
+};
